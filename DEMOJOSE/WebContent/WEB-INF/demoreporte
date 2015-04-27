@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="chartist.min.css" rel="stylesheet" type="text/css" />
+ 
+  <meta charset="utf-8">
+  <title>Chartist.js - Aspect ratio containers</title>
+
+</head>
+<body>
+<div id="">
+HELLO
+</div>
+
+ 
+
+<div id="ESTADISTICO2213"  style=" background-color: #00CC00;  width:30%;height:40%;">
+ <div id="ESTADISTICO1"   class="ct-chart ct-golden-section" >
+	ESTADISTICO
+</div>
+
+</div>
+
+
+
+<div id="ESTADISTICO21"  style=" width:40%;height:40%;">
+
+ <div id="ESTADISTICO2"   class="ct-chart ct-golden-section">
+	ESTADISTICO
+</div>
+</div>
+
+<div id="ESTADISTICO21"  style=" width:40%;height:40%;">
+
+ <div id="ESTADISTICO3"   class="ct-chart ct-golden-section">
+	ESTADISTICO
+</div>
+</div>
+
+
+<style type="text/css">
+
+html {
+  font-family: Oxigen, Helvetica, Arial;
+}
+
+.ct-chart .ct-bar {
+  stroke-width: 20px;
+}
+
+.ct-chart .ct-label.ct-horizontal {
+  text-align: center;
+}
+</style>
+  <script src="chartist.min.js"></script>
+
+<script type="text/javascript">
+
+new Chartist.Bar('#ESTADISTICO3', {
+  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+  series: [
+    [2, 8, 2, 4, 5, 8, 10],
+    [4, 5, 8, 2, 6, 3, 10]
+  ]
+}, {
+  seriesBarDistance: 30,
+  axisX: {
+    showGrid: false
+  }
+});
+
+
+var data = {
+  series: [5, 3, 4]
+};
+
+var sum = function(a, b) { return a + b };
+
+new Chartist.Pie('#ESTADISTICO1', data, {
+  labelInterpolationFnc: function(value) {
+    return Math.round(value / data.series.reduce(sum) * 100) + '%';
+  }
+});
+var data2 = {
+  series: [2, 2, 2]
+};
+
+
+new Chartist.Pie('#ESTADISTICO2', data2, {
+  labelInterpolationFnc: function(value) {
+    return Math.round(value / data.series.reduce(sum) * 100) + '%';
+  }
+});
+
+
+</script>
+</body>
+</html>
